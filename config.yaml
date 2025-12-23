@@ -1,15 +1,13 @@
 listen: :PORT_PLACEHOLDER
 
-acme:
-  domains:
-    - yourdomain.com
-  email: your@email.com
+tls:
+  cert: /etc/hysteria/cert.pem
+  key: /etc/hysteria/key.pem
 
 auth:
   type: password
   password: "dalong-strong-password"
 
-# 启用 UDP-over-TCP fallback（Fly.io 免费套餐必须）
 udp:
   enabled: true
   fallback_tcp: true
