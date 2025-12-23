@@ -13,3 +13,6 @@ COPY config.yaml /etc/hysteria/config.yaml
 RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
+
+COPY cert.pem /etc/hysteria/cert.pem
+COPY key.pem /etc/hysteria/key.pem
