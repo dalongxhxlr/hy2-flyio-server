@@ -1,17 +1,11 @@
-listen: :PORT_PLACEHOLDER
-
+listen: :8080
 tls:
   cert: /etc/hysteria/cert.pem
   key: /etc/hysteria/key.pem
-
 auth:
   type: password
-  password: "dalong-strong-password"
-
-udp:
-  enabled: true
-  fallback_tcp: true
-
-bandwidth:
-  up: 100 mbps
-  down: 100 mbps
+  password: your-password-here
+masquerade:
+  type: proxy
+  proxy:
+    url: https://www.bing.com
