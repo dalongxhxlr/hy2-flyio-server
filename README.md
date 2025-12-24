@@ -7,5 +7,3 @@ Features:
 - Automatic ACME HTTPS certificate
 - Password authentication
 - High performance
-
- 
