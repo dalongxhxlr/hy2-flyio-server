@@ -11,7 +11,12 @@ auth:
 masquerade:
   type: proxy
   proxy:
-    url: https://www.bing.com  # 可换成你想伪装的站点
+    url: https://www.bing.com
+
+resolver:
+  type: udp
+  addr: "1.1.1.1:53"
+  backup: "8.8.8.8:53"
 
 udp:
   hop_interval: 30s
