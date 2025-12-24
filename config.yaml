@@ -6,7 +6,7 @@ tls:
 
 auth:
   type: password
-password: "Z8r#vT9q@Lx3!sW2pK7$gB1e"
+  password: "Z8r#vT9q@Lx3!sW2pK7$gB1e"
 
 masquerade:
   type: proxy
