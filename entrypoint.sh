@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export TZ=Asia/Shanghai
 # Fly.io 会自动注入 $PORT 环境变量
 export PORT=${PORT:-8080}
 
