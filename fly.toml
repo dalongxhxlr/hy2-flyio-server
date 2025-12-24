@@ -16,3 +16,4 @@ primary_region = "sjc"
   [[services.tcp_checks]]
     interval = "10s"
     timeout = "2s"
+    
