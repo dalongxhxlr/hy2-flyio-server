@@ -1,4 +1,4 @@
-listen: 0.0.0.0:8080
+listen: :8080
 
 tls:
   cert: /etc/hysteria/cert.pem
@@ -18,7 +18,5 @@ resolver:
     addr: "1.1.1.1:53"
 
 udp:
-  hop_interval: 30s
   idle_timeout: 60s
   max_idle_timeout: 300s
-  disable_mtu_discovery: false
