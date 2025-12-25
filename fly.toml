@@ -1,9 +1,3 @@
-app = "hy2-flyio-server"
-primary_region = "sjc"
-
-[build]
-  dockerfile = "Dockerfile"
-
 [[services]]
   internal_port = 8080
   protocol = "tcp"
@@ -11,7 +5,3 @@ primary_region = "sjc"
   [[services.ports]]
     port = 8080
     protocol = "tcp"
-
-  [[services.tcp_checks]]
-    interval = "10s"
-    timeout = "2s"
