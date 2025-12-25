@@ -2,20 +2,13 @@ FROM alpine:latest
 
 RUN apk add --no-cache curl bash
 
-# 下载最新版 Hysteria2
-RUN HY2_VERSION=$(curl -s https://api.github.com/repos/apernet/hysteria/releases/latest | grep tag_name | cut -d '"' -f 4) && \
-    curl -L -o /usr/local/bin/hysteria https://github.com/apernet/hysteria/releases/download/${HY2_VERSION}/hysteria-linux-amd64 && \
-    chmod +x /usr/local/bin/hysteria
+# 下载 sing-box 最新版本
+RUN curl -L -o /usr/local/bin/sing-box \
+  https://github.com/SagerNet/sing-box/releases/latest/download/sing-box-linux-amd64 && \
+  chmod +x /usr/local/bin/sing-box
 
-# 关键：彻底禁用缓存
-ARG CACHEBUST=999999
-
-# 关键：强制 COPY
-COPY config.yaml /etc/hysteria/config.yaml
+COPY config.json /etc/sing-box/config.json
 COPY entrypoint.sh /entrypoint.sh
-COPY cert.pem /etc/hysteria/cert.pem
-COPY key.pem /etc/hysteria/key.pem
-
 RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]

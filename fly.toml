@@ -6,12 +6,12 @@ primary_region = "sjc"
 
 [[services]]
   internal_port = 8080
-  protocol = "udp"
+  protocol = "tcp"
 
   [[services.ports]]
     port = 8080
-    protocol = "udp"
+    protocol = "tcp"
 
-  [[services.udp_checks]]
+  [[services.tcp_checks]]
     interval = "10s"
     timeout = "2s"

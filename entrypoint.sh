@@ -5,7 +5,6 @@ export TZ=Asia/Shanghai
 export PORT=${PORT:-8080}
 
 echo "Fly.io PORT is $PORT"
-echo "server mode"
+echo "Starting sing-box..."
 
-/usr/local/bin/hysteria server \
-  --config /etc/hysteria/config.yaml
+exec /usr/local/bin/sing-box run -c /etc/sing-box/config.json
