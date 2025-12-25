@@ -1,0 +1,24 @@
+listen: :8080
+
+tls:
+  cert: /etc/hysteria/cert.pem
+  key: /etc/hysteria/key.pem
+
+auth:
+  type: password
+  password: "Z8r#vT9q@Lx3!sW2pK7$gB1e"
+
+masquerade:
+  type: proxy
+  proxy:
+    url: https://www.bing.com
+
+resolver:
+  type: udp
+  addr: "1.1.1.1:53"
+
+udp:
+  hop_interval: 30s
+  idle_timeout: 60s
+  max_idle_timeout: 300s
+  disable_mtu_discovery: false
