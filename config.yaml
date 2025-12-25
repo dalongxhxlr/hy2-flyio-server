@@ -14,12 +14,11 @@ masquerade:
     url: https://www.bing.com
 
 resolver:
-  type: udp
-  addr: "1.1.1.1:53"
+  udp:
+    addr: "1.1.1.1:53"
 
 udp:
   hop_interval: 30s
   idle_timeout: 60s
   max_idle_timeout: 300s
   disable_mtu_discovery: false
-# redo
