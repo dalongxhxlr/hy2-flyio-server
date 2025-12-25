@@ -7,10 +7,12 @@ RUN HY2_VERSION=$(curl -s https://api.github.com/repos/apernet/hysteria/releases
     curl -L -o /usr/local/bin/hysteria https://github.com/apernet/hysteria/releases/download/${HY2_VERSION}/hysteria-linux-amd64 && \
     chmod +x /usr/local/bin/hysteria
 
-ARG CACHEBUST=3
+# 关键：彻底禁用缓存
+ARG CACHEBUST=999999
 
-COPY entrypoint.sh /entrypoint.sh
+# 关键：强制 COPY
 COPY config.yaml /etc/hysteria/config.yaml
+COPY entrypoint.sh /entrypoint.sh
 COPY cert.pem /etc/hysteria/cert.pem
 COPY key.pem /etc/hysteria/key.pem
 
