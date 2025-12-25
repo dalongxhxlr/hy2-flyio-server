@@ -4,8 +4,8 @@ primary_region = "sjc"
 [build]
   dockerfile = "Dockerfile"
 
-[processes]
-app = "/entrypoint.sh"
+# Apps 模式不需要 processes
+# entrypoint.sh 会自动作为容器入口
 
 [[services]]
   internal_port = 8080
@@ -18,3 +18,4 @@ app = "/entrypoint.sh"
   [[services.tcp_checks]]
     interval = "10s"
     timeout = "2s"
+
