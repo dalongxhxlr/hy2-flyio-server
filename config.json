@@ -4,28 +4,25 @@
   },
   "inbounds": [
     {
-      "type": "socks",
+      "type": "hysteria2",
       "listen": "::",
-      "listen_port": 8080,
+      "listen_port": 443,
       "users": [
         {
-          "username": "dalong",
           "password": "Z8r#vT9q@Lx3!sW2pK7$gB1e"
         }
-      ]
+      ],
+      "tls": {
+        "enabled": true,
+        "certificate_path": "/etc/sing-box/cert.pem",
+        "key_path": "/etc/sing-box/key.pem"
+      }
     }
   ],
   "outbounds": [
     {
-      "type": "hysteria2",
-      "server": "66.241.124.62",
-      "server_port": 8080,
-      "password": "Z8r#vT9q@Lx3!sW2pK7$gB1e",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.bing.com",
-        "insecure": true
-      }
+      "type": "direct"
     }
   ]
 }
+

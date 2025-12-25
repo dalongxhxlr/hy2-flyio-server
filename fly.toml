@@ -1,21 +1,22 @@
 app = "hy2-flyio-server"
-primary_region = "sjc"
+primary_region = "sin"
 
 [build]
   dockerfile = "Dockerfile"
 
-# Apps 模式不需要 processes
-# entrypoint.sh 会自动作为容器入口
-
 [[services]]
-  internal_port = 8080
-  protocol = "tcp"
+  internal_port = 443
+  protocol = "udp"
 
   [[services.ports]]
-    port = 8080
+    port = 443
+    protocol = "udp"
+
+  [[services.ports]]
+    port = 443
     protocol = "tcp"
 
-  [[services.tcp_checks]]
+  [[services.udp_checks]]
     interval = "10s"
     timeout = "2s"
 
